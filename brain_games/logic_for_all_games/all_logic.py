@@ -26,12 +26,12 @@ def validation(value):
         return value
 
 
-def user_input():
+def user_input() -> str:
     inp = prompt.string('Your answer: ')
     return inp
 
 
-def add_counter(current_counter):
+def add_counter(current_counter: int) -> int:
     current_counter += 1
     return current_counter
 
@@ -49,3 +49,20 @@ def generate_expression(max_value=100):
 
 def evaluate_expression(expression):
     return eval(expression)
+
+
+def gcd(a: int, b: int) -> int:
+    while b:
+        a, b = b, a % b
+    return a
+
+
+def arithm_progression():
+    length = randint(5, 10)
+    start = randint(1, 100)  # начальный элемент
+    diff = randint(1, 10)  # разность прогрессии
+    seq = [start]  # добавляем начальный элемент в последовательность
+
+    for i in range(length - 1):  # заполняем последовательность до нужной длины
+        seq.append(seq[-1] + diff)
+    return seq

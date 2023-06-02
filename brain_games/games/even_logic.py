@@ -1,4 +1,5 @@
-from logic_for_all_games.all_logic import greeting, iseven, user_input, add_counter, randint
+from brain_games.logic_for_all_games.all_logic import \
+    greeting, iseven, user_input, add_counter, randint
 
 
 def do_brain_even_game(counter):

@@ -1,16 +1,17 @@
-from brain_games.logic_for_all_games.all_logic import greeting,  user_input, add_counter,\
-    generate_expression, evaluate_expression
+from brain_games.logic_for_all_games.all_logic import \
+    greeting, user_input, add_counter, randint, gcd
 
 
-def do_brain_calc_game(counter):
+def do_brain_gcd_game(counter):
     ''' game_logic
     '''
     usr_name = greeting()
-    rools = 'What is the result of the expression?'
+    rools = 'Find the greatest common divisor of given numbers.'
     print(rools)
     while True:
-        expression = generate_expression()
-        question = f'Question: {expression}'
+        random_num1 = randint(1, 100)
+        random_num2 = randint(1, 100)
+        question = f'Question: {random_num1} {random_num2}'
         print(question)
         user_input_answer = user_input()
         try:
@@ -18,7 +19,7 @@ def do_brain_calc_game(counter):
         except Exception:
             print('Incorect input. Please input inly num\'s value')
             continue
-        correct_answer = evaluate_expression(expression)
+        correct_answer = gcd(random_num1, random_num2)
         if user_input_answer == correct_answer:
             computer_answer = 'Correct!'
             counter = add_counter(counter)
@@ -33,4 +34,4 @@ def do_brain_calc_game(counter):
 
 
 def run():
-    do_brain_calc_game(0)
+    do_brain_gcd_game(0)
