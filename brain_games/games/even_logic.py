@@ -1,42 +1,10 @@
-import prompt
-from random import randint
+from logic_for_all_games.all_logic import greeting, iseven, user_input, add_counter, randint
 
 
-def welcome_user() -> str:
-    '''function return Hello, { inputing name }
-    '''
-    username = prompt.string('May I have your name? ')
-    return username
-
-
-def iseven(num: int) -> bool:
-    ''' This function checking is num % 2 == 0 or not
-    '''
-    flag = False
-    if num % 2 == 0:
-        flag = True
-    return flag
-
-
-# def validation(*args):
-#     lst = [str(x) for x in range(1, 16)]
-#     if args in lst:
-#         return True
-#     elif args not in lst:
-#         return False
-
-
-def user_input():
-    inp = prompt.string('Your answer: ')
-    return inp
-
-
-def game_logic():
+def do_brain_even_game(counter):
     ''' game_logic
     '''
-    usr_name = welcome_user()
-    print(f'Hello, {usr_name}')
-    counter = 0
+    usr_name = greeting()
     rools = 'Answer "yes" if the number is even, otherwise answer "no".'
     print(rools)
     while True:
@@ -47,10 +15,10 @@ def game_logic():
         user_input_answer = user_input()
         if num and (user_input_answer == 'yes'):
             computer_answer = 'Correct!'
-            counter += 1
+            counter = add_counter(counter)
         elif not num and (user_input_answer == 'no'):
             computer_answer = 'Correct!'
-            counter += 1
+            counter = add_counter(counter)
         elif not num and (user_input_answer == 'yes'):
             computer_answer = (f"'{user_input_answer}' is wrong answer ;(."
                                f"Correct answer was 'no'.\nLet's try again, {usr_name}!")
@@ -61,3 +29,7 @@ def game_logic():
         if counter == 3:
             print(f'Congratulations, {usr_name}!')
             break
+
+
+def run():
+    do_brain_even_game(0)

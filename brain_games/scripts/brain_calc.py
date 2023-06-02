@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
-from games.even_logic import run
+from games.brain_calc_logic import run
 
 
 def main():
-    '''run all program
+    '''run game
     '''
     print('Welcome to the Brain Games!')
     run()
