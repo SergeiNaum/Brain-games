@@ -51,9 +51,12 @@ def game_logic():
         elif not num and (user_input_answer == 'no'):
             computer_answer = 'Correct!'
             counter += 1
+        elif not num and (user_input_answer == 'yes'):
+            computer_answer = (f"'{user_input_answer}' is wrong answer ;(."
+                               f"Correct answer was 'no'.\nLet's try again, {usr_name}!")
         else:
-            computer_answer = "'yes' is wrong answer ;(. Correct answer \\" \
-                                "was 'no'.\nLet's try again, Bill!"
+            computer_answer = (f"'no' is wrong answer ;(. Correct answer was 'yes'.\n"
+                               f"Let's try again, {usr_name}!")
         print(computer_answer)
         if counter == 3:
             print(f'Congratulations, {usr_name}!')
