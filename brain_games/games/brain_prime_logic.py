@@ -14,8 +14,6 @@ def do_brain_even_game(counter):
         print(question)
         num = isprime(random_num)
         user_input_answer = user_input()
-        # computer_wrong_answer = (f"'{user_input_answer}' is wrong answer ;(."
-        #                    f"Correct answer was 'no'.\nLet's try again, {usr_name}!")
         if num and (user_input_answer == 'yes'):
             computer_answer = 'Correct!'
             counter = add_counter(counter)

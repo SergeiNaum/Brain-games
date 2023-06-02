@@ -1,5 +1,5 @@
-from brain_games.logic_for_all_games.all_logic import greeting,  user_input, add_counter,\
-    generate_expression, evaluate_expression
+from brain_games.logic_for_all_games.all_logic import greeting, \
+    user_input, add_counter, generate_expression, evaluate_expression
 
 
 def do_brain_calc_game(counter):

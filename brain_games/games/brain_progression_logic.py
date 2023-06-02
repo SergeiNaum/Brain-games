@@ -1,5 +1,5 @@
 from brain_games.logic_for_all_games.all_logic import \
-    greeting, user_input, add_counter, generate_arithm_progression, hide_element
+    greeting, user_input, add_counter, generate_progression, hide_element
 
 
 def do_brain_progression_game(counter):
@@ -9,7 +9,7 @@ def do_brain_progression_game(counter):
     rools = 'What number is missing in the progression?'
     print(rools)
     while True:
-        hidden_element, progression = hide_element(generate_arithm_progression())
+        hidden_element, progression = hide_element(generate_progression())
         print("Question:", " ".join(str(x) for x in progression))
         answer = user_input()
         try:
