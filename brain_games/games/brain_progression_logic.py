@@ -1,5 +1,5 @@
 from brain_games.logic_for_all_games.all_logic import \
-    greeting, user_input, add_counter, generate_arithm_progression, randint, hide_element
+    greeting, user_input, add_counter, generate_arithm_progression, hide_element
 
 
 def do_brain_progression_game(counter):
@@ -23,8 +23,8 @@ def do_brain_progression_game(counter):
             print("Correct!")
         else:
             computer_answer = (f"'{answer}' is wrong answer ;(."
-                                f"Correct answer was '{hidden_element}'."
-                                f"\nLet's try again, {usr_name}!")
+                               f"Correct answer was '{hidden_element}'."
+                               f"\nLet's try again, {usr_name}!")
             print(computer_answer)
         if counter == 3:
             print(f'Congratulations, {usr_name}!')

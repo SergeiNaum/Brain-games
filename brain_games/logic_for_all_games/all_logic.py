@@ -1,5 +1,6 @@
-import prompt
 from random import randint, choice
+
+import prompt
 
 
 def greeting() -> str:
@@ -47,7 +48,7 @@ def generate_expression(max_value=100):
 	return expression
 
 
-def evaluate_expression(expression):
+def evaluate_expression(expression) -> int or float:
 	return eval(expression)
 
 
@@ -57,7 +58,7 @@ def gcd(a: int, b: int) -> int:
 	return a
 
 
-def generate_arithm_progression(min_length=5, max_length=10):
+def generate_arithm_progression(min_length=5, max_length=10) -> list:
 	length = randint(min_length, max_length)
 	start = randint(1, 10)
 	step = randint(1, 5)
@@ -65,8 +66,21 @@ def generate_arithm_progression(min_length=5, max_length=10):
 	return progression
 
 
-def hide_element(progression):
+def hide_element(progression: list) -> tuple:
 	hidden_index = randint(0, len(progression) - 1)
 	hidden_element = progression[hidden_index]
 	progression[hidden_index] = ".."
 	return hidden_element, progression
+
+
+def isprime(digit: int) -> bool:
+	d = 2
+	while d * d <= digit and digit % d != 0:
+		d += 1
+		return d * d > digit
+
+
+def computer_wrong_answer(user_answer, user_name):
+	message = (f"'{user_answer}' is wrong answer ;(."
+                 f"Correct answer was 'no'.\nLet's try again, {user_name}!")
+	return message

@@ -2,7 +2,7 @@ from brain_games.logic_for_all_games.all_logic import \
     greeting, user_input, add_counter, randint, gcd
 
 
-def do_brain_gcd_game(counter):
+def do_brain_gcd_game(counter: int):
     ''' game_logic
     '''
     usr_name = greeting()
