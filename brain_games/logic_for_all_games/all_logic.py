@@ -78,7 +78,7 @@ def isprime(digit: int) -> bool:
     """used to calculate a prime digit"""
     if digit < 2:
         return False
-    for d in range(2, int(math.sqrt(digit))+1):
+    for d in range(2, int(math.sqrt(digit)) + 1):
         if digit % d == 0:
             return False
     return True
@@ -100,10 +100,8 @@ def computer_wrong_answer_no(user_answer: str, user_name: str) -> str:
 
 def is_correct_answer(iseven_num: bool, user_input_a: str) -> bool:
     """Check if the user's response matches the expected response."""
-    if (
-        iseven_num and user_input_a == 'yes' or
-        (not iseven_num and user_input_a == 'no')
-                                                ):
+    if iseven_num and user_input_a == 'yes' or not\
+            iseven_num and user_input_a == 'no':
         return True
 
 
