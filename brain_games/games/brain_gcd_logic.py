@@ -21,13 +21,14 @@ def do_brain_gcd_game(counter: int):
             continue
         correct_answer = gcd(random_num1, random_num2)
         if user_input_answer == correct_answer:
-            computer_answer = 'Correct!'
+            print('Correct!')
             counter = add_counter(counter)
         else:
             computer_answer = (f"'{user_input_answer}' is wrong answer ;(."
                                f"Correct answer was '{correct_answer}'."
                                f"\nLet's try again, {usr_name}!")
-        print(computer_answer)
+            print(computer_answer)
+            break
         if counter == 3:
             print(f'Congratulations, {usr_name}!')
             break

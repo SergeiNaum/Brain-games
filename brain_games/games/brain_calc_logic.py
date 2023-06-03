@@ -20,7 +20,7 @@ def do_brain_calc_game(counter: int):
             continue
         correct_answer = evaluate_expression(expression)
         if user_input_answer == correct_answer:
-            computer_answer = 'Correct!'
+            print('Correct!')
             counter = add_counter(counter)
         else:
             computer_answer = (f"'{user_input_answer}' is wrong answer ;(."

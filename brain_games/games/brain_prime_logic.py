@@ -1,6 +1,6 @@
 from brain_games.logic_for_all_games.all_logic import \
     greeting, isprime, user_input, add_counter, randint,\
-    computer_wrong_answer_yes, computer_wrong_answer_no
+    is_correct_answer, wrong_answer
 
 
 def do_brain_prime_game(counter: int):
@@ -15,17 +15,13 @@ def do_brain_prime_game(counter: int):
         print(question)
         num = isprime(random_num)
         user_input_a = user_input()
-        if num and (user_input_a == 'yes'):
-            computer_answer = 'Correct!'
+        if is_correct_answer(num, user_input_a):
             counter = add_counter(counter)
-        elif not num and (user_input_a == 'no'):
-            computer_answer = 'Correct!'
-            counter = add_counter(counter)
-        elif not num and (user_input_a == 'yes'):
-            computer_answer = computer_wrong_answer_yes(user_input_a, usr_name)
+            print('Correct!')
         else:
-            computer_answer = computer_wrong_answer_no(user_input_a, usr_name)
-        print(computer_answer)
+            computer_answer = wrong_answer(num, user_input_a, usr_name)
+            print(computer_answer)
+            break
         if counter == 3:
             print(f'Congratulations, {usr_name}!')
             break
