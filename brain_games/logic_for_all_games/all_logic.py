@@ -22,13 +22,6 @@ def iseven(num: int) -> bool:
     return flag
 
 
-def validation(value):
-    if type(value) != type(int):
-        return print('Incorect input. Please input inly num\'s value')
-    else:
-        return value
-
-
 def user_input() -> str:
     inp = prompt.string('Your answer: ')
     return inp
@@ -98,11 +91,14 @@ def computer_wrong_answer_no(user_answer: str, user_name: str) -> str:
 
 def is_correct_answer(iseven_num: bool, user_input_a: str) -> bool:
     """Check if the user's response matches the expected response."""
-    if (iseven_num and user_input_a == 'yes') or (not iseven_num and user_input_a == 'no'):
+    if (
+        iseven_num and user_input_a == 'yes' or
+        (not iseven_num and user_input_a == 'no')
+                                                ):
         return True
 
 
-def wrong_answer(num: bool, user_input_a: str, usr_name: str) -> str:
+def wrong_answer(num: bool, user_input_a: str, usr_name: str) -> str or bool:
     """Forms an answer about the wrong choice."""
     if num and (user_input_a == 'yes'):
         return computer_wrong_answer_yes(user_input_a, usr_name)
@@ -112,11 +108,13 @@ def wrong_answer(num: bool, user_input_a: str, usr_name: str) -> str:
         return computer_wrong_answer_yes(user_input_a, usr_name)
     elif num and (user_input_a == 'no'):
         return computer_wrong_answer_no(user_input_a, usr_name)
+    elif user_input_a not in ('yes', 'no'):
+        return 'fatal error, incorrect input. Program is shutdown immediately!'
 
 
-def input_valid(value: str) -> str:
-    if value not in('yes', 'no'):
-        print("Incorrect input, please input only 'yes' or 'no'!")
-        user_inp = user_input()
-        return user_inp
-    return value
+# def input_valid(value: str) -> str:
+#     if value not in('yes', 'no'):
+#         print("Incorrect input, please input only 'yes' or 'no'!")
+#         user_inp = user_input()
+#         return user_inp
+#     return value
