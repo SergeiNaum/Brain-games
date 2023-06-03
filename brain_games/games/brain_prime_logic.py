@@ -2,9 +2,9 @@ from brain_games.logic_for_all_games.all_logic import \
     greeting, isprime, user_input, add_counter, randint, computer_wrong_answer
 
 
-def do_brain_even_game(counter):
-    ''' game_logic
-    '''
+def do_brain_even_game(counter: int):
+    """ game_logic
+    """
     usr_name = greeting()
     rools = 'Answer "yes" if given number is prime. Otherwise answer "no".'
     print(rools)
@@ -31,4 +31,5 @@ def do_brain_even_game(counter):
 
 
 def run():
+    """Running function do_brain_prime_game"""
     do_brain_even_game(0)

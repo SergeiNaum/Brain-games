@@ -4,8 +4,8 @@ from brain_games.games.brain_prime_logic import run
 
 
 def main():
-    '''run game
-    '''
+    """run function's at brain_prime_logic
+    """
     print('Welcome to the Brain Games!')
     run()
 

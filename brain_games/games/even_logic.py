@@ -2,9 +2,9 @@ from brain_games.logic_for_all_games.all_logic import \
     greeting, iseven, user_input, add_counter, randint
 
 
-def do_brain_even_game(counter):
-    ''' game_logic
-    '''
+def do_brain_even_game(counter: int):
+    """ game_logic
+    """
     usr_name = greeting()
     rools = 'Answer "yes" if the number is even, otherwise answer "no".'
     print(rools)
@@ -37,4 +37,5 @@ def do_brain_even_game(counter):
 
 
 def run():
+    """Running function do_brain_even_game"""
     do_brain_even_game(0)

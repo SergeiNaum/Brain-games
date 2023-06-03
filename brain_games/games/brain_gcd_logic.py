@@ -3,8 +3,8 @@ from brain_games.logic_for_all_games.all_logic import \
 
 
 def do_brain_gcd_game(counter: int):
-    ''' game_logic
-    '''
+    """ game_logic
+    """
     usr_name = greeting()
     rools = 'Find the greatest common divisor of given numbers.'
     print(rools)
@@ -34,4 +34,5 @@ def do_brain_gcd_game(counter: int):
 
 
 def run():
+    """Running function do_brain_gcd_game"""
     do_brain_gcd_game(0)

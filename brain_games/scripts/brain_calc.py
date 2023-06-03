@@ -4,8 +4,8 @@ from brain_games.games.brain_calc_logic import run
 
 
 def main():
-    '''run game
-    '''
+    """run function's at brain_even_logic
+    """
     print('Welcome to the Brain Games!')
     run()
 

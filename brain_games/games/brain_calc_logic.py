@@ -2,9 +2,9 @@ from brain_games.logic_for_all_games.all_logic import greeting, \
     user_input, add_counter, generate_expression, evaluate_expression
 
 
-def do_brain_calc_game(counter):
-    ''' game_logic
-    '''
+def do_brain_calc_game(counter: int):
+    """ game_logic
+    """
     usr_name = greeting()
     rools = 'What is the result of the expression?'
     print(rools)
@@ -33,4 +33,5 @@ def do_brain_calc_game(counter):
 
 
 def run():
+    """Running function do_brain_calc_game"""
     do_brain_calc_game(0)

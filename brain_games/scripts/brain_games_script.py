@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
-from games.cli import welcome_user
+from brain_games.games.cli import welcome_user
 
 
 def main():
-    '''run all program
-    '''
+    """run program('s) at cli.py
+    """
     print('Welcome to the Brain Games!')
     print(welcome_user())
 

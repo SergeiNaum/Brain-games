@@ -2,9 +2,9 @@ from brain_games.logic_for_all_games.all_logic import \
     greeting, user_input, add_counter, generate_progression, hide_element
 
 
-def do_brain_progression_game(counter):
-    ''' game_logic
-    '''
+def do_brain_progression_game(counter: int):
+    """ game_logic
+    """
     usr_name = greeting()
     rools = 'What number is missing in the progression?'
     print(rools)
@@ -32,4 +32,5 @@ def do_brain_progression_game(counter):
 
 
 def run():
+    """Running function do_brain_progression_game"""
     do_brain_progression_game(0)
