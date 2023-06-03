@@ -26,6 +26,7 @@ def do_brain_progression_game(counter: int):
                                f"Correct answer was '{hidden_element}'."
                                f"\nLet's try again, {usr_name}!")
             print(computer_answer)
+            break
         if counter == 3:
             print(f'Congratulations, {usr_name}!')
             break
