@@ -15,7 +15,6 @@ def do_brain_even_game(counter: int):
         print(question)
         num = iseven(random_num)
         user_input_a = input_valid(user_input())
-        # input_valid(user_input_a)
         if is_correct_answer(num, user_input_a):
             counter = add_counter(counter)
             print('Correct!')
@@ -33,3 +32,5 @@ def do_brain_even_game(counter: int):
 def run():
     """Running function do_brain_even_game"""
     do_brain_even_game(0)
+
+run()

@@ -98,10 +98,7 @@ def computer_wrong_answer_no(user_answer: str, user_name: str) -> str:
 
 def is_correct_answer(iseven_num: bool, user_input_a: str) -> bool:
     """Check if the user's response matches the expected response."""
-    if (
-        (iseven_num and user_input_a == 'yes') or
-        (not iseven_num and user_input_a == 'no')
-                                                  ):
+    if (iseven_num and user_input_a == 'yes') or (not iseven_num and user_input_a == 'no'):
         return True
 
 
@@ -109,8 +106,13 @@ def wrong_answer(num: bool, user_input_a: str, usr_name: str) -> str:
     """Forms an answer about the wrong choice."""
     if num and (user_input_a == 'yes'):
         return computer_wrong_answer_yes(user_input_a, usr_name)
+    elif not num and (user_input_a == 'no'):
+        return computer_wrong_answer_no(user_input_a, usr_name)
+    elif not num and (user_input_a == 'yes'):
+        return computer_wrong_answer_yes(user_input_a, usr_name)
     elif num and (user_input_a == 'no'):
         return computer_wrong_answer_no(user_input_a, usr_name)
+
 
 def input_valid(value: str) -> str:
     if value not in('yes', 'no'):
