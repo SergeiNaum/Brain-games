@@ -7,8 +7,8 @@ def do_brain_even_game(counter: int):
     """ game_logic
     """
     usr_name = greeting()
-    rools = 'Answer "yes" if the number is even, otherwise answer "no".'
-    print(rools)
+    rules = 'Answer "yes" if the number is even, otherwise answer "no".'
+    print(rules)
     while True:
         random_num = randint(1, 15)
         question = f'Question: {random_num}'

@@ -6,8 +6,8 @@ def do_brain_gcd_game(counter: int):
     """ game_logic
     """
     usr_name = greeting()
-    rools = 'Find the greatest common divisor of given numbers.'
-    print(rools)
+    rules = 'Find the greatest common divisor of given numbers.'
+    print(rules)
     while True:
         random_num1 = randint(1, 100)
         random_num2 = randint(1, 100)

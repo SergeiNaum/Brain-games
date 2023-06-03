@@ -23,18 +23,20 @@ def iseven(num: int) -> bool:
 
 
 def user_input() -> str:
+    """used for user input """
     inp = prompt.string('Your answer: ')
     return inp
 
 
 def add_counter(current_counter: int) -> int:
+    """used to increment the counter"""
     current_counter += 1
     return current_counter
 
 
 def generate_expression(max_value=100):
+    """used to compose a math expression"""
     math_action_lst = ['+', '-', '*']
-
     random_num1 = randint(1, max_value)
     random_num2 = randint(1, max_value)
     math_action = choice(math_action_lst)
@@ -44,16 +46,19 @@ def generate_expression(max_value=100):
 
 
 def evaluate_expression(expression) -> int or float:
+    """used to calculate a mathematical expression"""
     return eval(expression)
 
 
 def gcd(a: int, b: int) -> int:
+    """used to calculate a gcd"""
     while b:
         a, b = b, a % b
     return a
 
 
 def generate_progression(min_length=5, max_length=10) -> list:
+    """used to generate math progression"""
     length = randint(min_length, max_length)
     start = randint(1, 10)
     step = randint(1, 5)
@@ -62,6 +67,7 @@ def generate_progression(min_length=5, max_length=10) -> list:
 
 
 def hide_element(progression: list) -> tuple:
+    """used to hide element in the list"""
     hidden_index = randint(0, len(progression) - 1)
     hidden_element = progression[hidden_index]
     progression[hidden_index] = ".."
@@ -69,6 +75,7 @@ def hide_element(progression: list) -> tuple:
 
 
 def isprime(digit: int) -> bool:
+    """used to calculate a prime digit"""
     if digit < 2:
         return False
     for d in range(2, int(math.sqrt(digit))+1):
@@ -78,12 +85,14 @@ def isprime(digit: int) -> bool:
 
 
 def computer_wrong_answer_yes(user_answer, user_name) -> str:
+    """return massage = wrong answer"""
     message = (f"'{user_answer}' is wrong answer ;(."
                f"Correct answer was 'no'.\nLet's try again, {user_name}!")
     return message
 
 
 def computer_wrong_answer_no(user_answer: str, user_name: str) -> str:
+    """return massage = wrong answer"""
     message = (f"'{user_answer}' is wrong answer ;(."
                f"Correct answer was 'yes'.\nLet's try again, {user_name}!")
     return message

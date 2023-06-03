@@ -6,8 +6,8 @@ def do_brain_progression_game(counter: int):
     """ game_logic
     """
     usr_name = greeting()
-    rools = 'What number is missing in the progression?'
-    print(rools)
+    rules = 'What number is missing in the progression?'
+    print(rules)
     while True:
         hidden_element, progression = hide_element(generate_progression())
         print("Question:", " ".join(str(x) for x in progression))

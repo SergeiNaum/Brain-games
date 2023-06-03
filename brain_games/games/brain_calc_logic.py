@@ -6,8 +6,8 @@ def do_brain_calc_game(counter: int):
     """ game_logic
     """
     usr_name = greeting()
-    rools = 'What is the result of the expression?'
-    print(rools)
+    rules = 'What is the result of the expression?'
+    print(rules)
     while True:
         expression = generate_expression()
         question = f'Question: {expression}'
@@ -26,7 +26,8 @@ def do_brain_calc_game(counter: int):
             computer_answer = (f"'{user_input_answer}' is wrong answer ;(."
                                f"Correct answer was '{correct_answer}'."
                                f"\nLet's try again, {usr_name}!")
-        print(computer_answer)
+            print(computer_answer)
+            break
         if counter == 3:
             print(f'Congratulations, {usr_name}!')
             break

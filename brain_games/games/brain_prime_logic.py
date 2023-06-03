@@ -7,8 +7,8 @@ def do_brain_prime_game(counter: int):
     """ game_logic
     """
     usr_name = greeting()
-    rools = 'Answer "yes" if given number is prime. Otherwise answer "no".'
-    print(rools)
+    rules = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+    print(rules)
     while True:
         random_num = randint(1, 150)
         question = f'Question: {random_num}'
