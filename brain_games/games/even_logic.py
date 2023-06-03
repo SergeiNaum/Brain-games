@@ -1,5 +1,6 @@
 from brain_games.logic_for_all_games.all_logic import \
-    greeting, iseven, user_input, add_counter, randint
+    greeting, iseven, user_input, add_counter, randint, \
+    is_correct_answer, wrong_answer, input_valid
 
 
 def do_brain_even_game(counter: int):
@@ -13,29 +14,22 @@ def do_brain_even_game(counter: int):
         question = f'Question: {random_num}'
         print(question)
         num = iseven(random_num)
-        user_input_answer = user_input()
-        if num and (user_input_answer == 'yes'):
-            computer_answer = 'Correct!'
+        user_input_a = input_valid(user_input())
+        # input_valid(user_input_a)
+        if is_correct_answer(num, user_input_a):
             counter = add_counter(counter)
-        elif not num and (user_input_answer == 'no'):
-            computer_answer = 'Correct!'
-            counter = add_counter(counter)
-        elif not num and (user_input_answer == 'yes'):
-            computer_answer = (
-                f"'{user_input_answer}' is wrong answer ;(."
-                f"Correct answer was 'no'.\nLet's try again, {usr_name}!"
-            )
+            print('Correct!')
         else:
-            computer_answer = (
-                f"'no' is wrong answer ;(. Correct answer was 'yes'.\n"
-                f"Let's try again, {usr_name}!"
-            )
-        print(computer_answer)
+            computer_answer = wrong_answer(num, user_input_a, usr_name)
+            print(computer_answer)
+            break
+
         if counter == 3:
             print(f'Congratulations, {usr_name}!')
             break
 
 
+#
 def run():
     """Running function do_brain_even_game"""
     do_brain_even_game(0)

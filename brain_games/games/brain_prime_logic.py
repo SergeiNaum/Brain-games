@@ -1,8 +1,9 @@
 from brain_games.logic_for_all_games.all_logic import \
-    greeting, isprime, user_input, add_counter, randint, computer_wrong_answer
+    greeting, isprime, user_input, add_counter, randint,\
+    computer_wrong_answer_yes, computer_wrong_answer_no
 
 
-def do_brain_even_game(counter: int):
+def do_brain_prime_game(counter: int):
     """ game_logic
     """
     usr_name = greeting()
@@ -13,17 +14,17 @@ def do_brain_even_game(counter: int):
         question = f'Question: {random_num}'
         print(question)
         num = isprime(random_num)
-        user_input_answer = user_input()
-        if num and (user_input_answer == 'yes'):
+        user_input_a = user_input()
+        if num and (user_input_a == 'yes'):
             computer_answer = 'Correct!'
             counter = add_counter(counter)
-        elif not num and (user_input_answer == 'no'):
+        elif not num and (user_input_a == 'no'):
             computer_answer = 'Correct!'
             counter = add_counter(counter)
-        elif not num and (user_input_answer == 'yes'):
-            computer_answer = computer_wrong_answer(user_input_answer, usr_name)
+        elif not num and (user_input_a == 'yes'):
+            computer_answer = computer_wrong_answer_yes(user_input_a, usr_name)
         else:
-            computer_answer = computer_wrong_answer(user_input_answer, usr_name)
+            computer_answer = computer_wrong_answer_no(user_input_a, usr_name)
         print(computer_answer)
         if counter == 3:
             print(f'Congratulations, {usr_name}!')
@@ -32,4 +33,4 @@ def do_brain_even_game(counter: int):
 
 def run():
     """Running function do_brain_prime_game"""
-    do_brain_even_game(0)
+    do_brain_prime_game(0)

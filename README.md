@@ -46,4 +46,3 @@ ___
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/SergeiNaum/python-project-49/workflows/hexlet-check/badge.svg)](https://github.com/SergeiNaum/python-project-49/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/c62b536dfd604931a711/maintainability)](https://codeclimate.com/github/SergeiNaum/python-project-49/maintainability)
-[![workflow](https://github.com/SergeiNaum/python-project-49/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/DzmitrySha/SergeiNaum/python-project-49/actions/workflows/hexlet-check.yml)

@@ -1,4 +1,6 @@
+import math
 from random import randint, choice
+
 
 import prompt
 
@@ -74,13 +76,45 @@ def hide_element(progression: list) -> tuple:
 
 
 def isprime(digit: int) -> bool:
-    d = 2
-    while d * d <= digit and digit % d != 0:
-        d += 1
-        return d * d > digit
+    if digit < 2:
+        return False
+    for d in range(2, int(math.sqrt(digit))+1):
+        if digit % d == 0:
+            return False
+    return True
 
 
-def computer_wrong_answer(user_answer, user_name):
+def computer_wrong_answer_yes(user_answer, user_name) -> str:
     message = (f"'{user_answer}' is wrong answer ;(."
                f"Correct answer was 'no'.\nLet's try again, {user_name}!")
     return message
+
+
+def computer_wrong_answer_no(user_answer: str, user_name: str) -> str:
+    message = (f"'{user_answer}' is wrong answer ;(."
+               f"Correct answer was 'yes'.\nLet's try again, {user_name}!")
+    return message
+
+
+def is_correct_answer(iseven_num: bool, user_input_a: str) -> bool:
+    """Check if the user's response matches the expected response."""
+    if (
+        (iseven_num and user_input_a == 'yes') or
+        (not iseven_num and user_input_a == 'no')
+                                                  ):
+        return True
+
+
+def wrong_answer(num: bool, user_input_a: str, usr_name: str) -> str:
+    """Forms an answer about the wrong choice."""
+    if num and (user_input_a == 'yes'):
+        return computer_wrong_answer_yes(user_input_a, usr_name)
+    elif num and (user_input_a == 'no'):
+        return computer_wrong_answer_no(user_input_a, usr_name)
+
+def input_valid(value: str) -> str:
+    if value not in('yes', 'no'):
+        print("Incorrect input, please input only 'yes' or 'no'!")
+        user_inp = user_input()
+        return user_inp
+    return value
