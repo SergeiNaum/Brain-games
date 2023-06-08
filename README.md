@@ -1,17 +1,22 @@
+### Hexlet tests and linter status:
+[![Actions Status](https://github.com/SergeiNaum/python-project-49/workflows/hexlet-check/badge.svg)](https://github.com/SergeiNaum/python-project-49/actions)
+[![Maintainability](https://api.codeclimate.com/v1/badges/c62b536dfd604931a711/maintainability)](https://codeclimate.com/github/SergeiNaum/python-project-49/maintainability)
+
+
 # python-project-49
 
 
-## Запуск игр
+## Running games
 
-```brain-even``` - Проверка на чётность
+```brain-even``` - is the number even
 
-```brain-calc ``` - Калькулятор
+```brain-calc ``` - Calculator
 
-```brain-gcd``` - Наибольший общий делитель (НОД)
+```brain-gcd``` - Greatest Common Divisor (GCD)
 
-```brain-progression``` - Арифметическая прогрессия
+```brain-progression``` - Arithmetic progression
 
-```brain-prime``` - Простое ли число?
+```brain-prime``` - Is it a prime number?
 
 ## Установка и первый запуск
 
@@ -40,9 +45,3 @@ _Вам показывается ряд чисел, образующий ари�
 
 [![asciicast](https://asciinema.org/a/Br2VOmcI22lUuFkI4wrofzyct.svg)](https://asciinema.org/a/Br2VOmcI22lUuFkI4wrofzyct)
 ___
-
-
-
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/SergeiNaum/python-project-49/workflows/hexlet-check/badge.svg)](https://github.com/SergeiNaum/python-project-49/actions)
-[![Maintainability](https://api.codeclimate.com/v1/badges/c62b536dfd604931a711/maintainability)](https://codeclimate.com/github/SergeiNaum/python-project-49/maintainability)
