@@ -1,34 +1,19 @@
-from brain_games.logic_for_all_games.all_logic import \
-    greeting, iseven, user_input, add_counter, randint, \
-    is_correct_answer, wrong_answer
+"""Brain-Even Game."""
+
+from random import randint
+from brain_games.logic_for_all_games.all_logic import iseven
+
+DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
-def do_brain_even_game(counter: int):
-    """ game_logic
-    """
-    usr_name = greeting()
-    rules = 'Answer "yes" if the number is even, otherwise answer "no".'
-    print(rules)
-    while True:
-        random_num = randint(1, 15)
-        question = f'Question: {random_num}'
-        print(question)
-        num = iseven(random_num)
-        # user_input_a = input_valid(user_input())
-        user_input_a = user_input()
-        if is_correct_answer(num, user_input_a):
-            counter = add_counter(counter)
-            print('Correct!')
-        else:
-            computer_answer = wrong_answer(num, user_input_a, usr_name)
-            print(computer_answer)
-            break
-        if counter == 3:
-            print(f'Congratulations, {usr_name}!')
-            break
-
-
-#
-def run():
-    """Running function do_brain_even_game"""
-    do_brain_even_game(0)
+def make_question_and_correct_answer():
+    """Make game question and answer."""
+    min_number = 1
+    max_number = 99
+    number = randint(min_number, max_number)
+    question = str(number)
+    if iseven(number):
+        correct_answer = 'yes'
+    else:
+        correct_answer = 'no'
+    return question, correct_answer

@@ -1,32 +1,16 @@
-from brain_games.logic_for_all_games.all_logic import \
-    greeting, isprime, user_input, add_counter, randint,\
-    is_correct_answer, wrong_answer
+from brain_games.logic_for_all_games.all_logic import is_prime
+from random import randint
+
+"""Brain Prime Game."""
+
+DESCRIPTION = 'Answer "yes" if given number is prime. ' \
+              'Otherwise answer "no".'
 
 
-def do_brain_prime_game(counter: int):
-    """ game_logic
-    """
-    usr_name = greeting()
-    rules = 'Answer "yes" if given number is prime. Otherwise answer "no".'
-    print(rules)
-    while True:
-        random_num = randint(1, 150)
-        question = f'Question: {random_num}'
-        print(question)
-        num = isprime(random_num)
-        user_input_a = user_input()
-        if is_correct_answer(num, user_input_a):
-            counter = add_counter(counter)
-            print('Correct!')
-        else:
-            computer_answer = wrong_answer(num, user_input_a, usr_name)
-            print(computer_answer)
-            break
-        if counter == 3:
-            print(f'Congratulations, {usr_name}!')
-            break
-
-
-def run():
-    """Running function do_brain_prime_game"""
-    do_brain_prime_game(0)
+def make_question_and_correct_answer():
+    """Make game question and answer."""
+    min_number = 1
+    max_number = 21
+    number = randint(min_number, max_number)
+    question = str(number)
+    return question, is_prime(number)

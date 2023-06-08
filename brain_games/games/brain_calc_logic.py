@@ -1,38 +1,22 @@
-from brain_games.logic_for_all_games.all_logic import greeting, \
-    user_input, add_counter, generate_expression, evaluate_expression
+"""Brain-Calc Game."""
+
+from random import choice, randint
+from operator import add, sub, mul
+
+DESCRIPTION = 'What is the result of the expression?'
 
 
-def do_brain_calc_game(counter: int):
-    """ game_logic
-    """
-    usr_name = greeting()
-    rules = 'What is the result of the expression?'
-    print(rules)
-    while True:
-        expression = generate_expression()
-        question = f'Question: {expression}'
-        print(question)
-        user_input_answer = user_input()
-        try:
-            user_input_answer = int(user_input_answer)
-        except Exception:
-            print('Incorect input. Please input inly num\'s value')
-            continue
-        correct_answer = evaluate_expression(expression)
-        if user_input_answer == correct_answer:
-            print('Correct!')
-            counter = add_counter(counter)
-        else:
-            computer_answer = (f"'{user_input_answer}' is wrong answer ;(."
-                               f"Correct answer was '{correct_answer}'."
-                               f"\nLet's try again, {usr_name}!")
-            print(computer_answer)
-            break
-        if counter == 3:
-            print(f'Congratulations, {usr_name}!')
-            break
-
-
-def run():
-    """Running function do_brain_calc_game"""
-    do_brain_calc_game(0)
+def make_question_and_correct_answer():
+    """Make game question and answer."""
+    min_number = 1
+    max_number = 12
+    operand_first = randint(min_number, max_number)
+    operand_second = randint(min_number, max_number)
+    operation, operator = choice([
+        (add, '+'),
+        (sub, '-'),
+        (mul, '*'),
+    ])
+    correct_answer = operation(operand_first, operand_second)
+    question = f"{operand_first} {operator} {operand_second}"
+    return question, str(correct_answer)

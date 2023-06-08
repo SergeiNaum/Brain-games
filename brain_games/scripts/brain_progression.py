@@ -1,13 +1,14 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
+"""Brain Progression Game start."""
 
-from brain_games.games.brain_progression_logic import run
+
+from brain_games.engine import run_game
+from brain_games.games import brain_progression_logic
 
 
 def main():
-    """run function's at brain_progression_logic
-    """
-    print('Welcome to the Brain Games!')
-    run()
+    """Start the "Brain-Progression Game"."""
+    run_game(brain_progression_logic)
 
 
 if __name__ == '__main__':

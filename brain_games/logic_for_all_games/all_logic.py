@@ -1,13 +1,12 @@
 import math
-from random import randint, choice
-
-
 import prompt
+from random import randint
 
 
 def greeting() -> str:
     '''function print Hello, { inputing name } and return user_name
     '''
+    print("Welcome to the Brain Games!")
     user_name = prompt.string('May I have your name? ')
     print(f'Hello, {user_name}')
     return user_name
@@ -20,41 +19,6 @@ def iseven(num: int) -> bool:
     if num % 2 == 0:
         flag = True
     return flag
-
-
-def user_input() -> str:
-    """used for user input """
-    inp = prompt.string('Your answer: ')
-    return inp
-
-
-def add_counter(current_counter: int) -> int:
-    """used to increment the counter"""
-    current_counter += 1
-    return current_counter
-
-
-def generate_expression(max_value=100):
-    """used to compose a math expression"""
-    math_action_lst = ['+', '-', '*']
-    random_num1 = randint(1, max_value)
-    random_num2 = randint(1, max_value)
-    math_action = choice(math_action_lst)
-
-    expression = f"{random_num1} {math_action} {random_num2}"
-    return expression
-
-
-def evaluate_expression(expression) -> int or float:
-    """used to calculate a mathematical expression"""
-    return eval(expression)
-
-
-def gcd(a: int, b: int) -> int:
-    """used to calculate a gcd"""
-    while b:
-        a, b = b, a % b
-    return a
 
 
 def generate_progression(min_length=5, max_length=10) -> list:
@@ -74,54 +38,11 @@ def hide_element(progression: list) -> tuple:
     return hidden_element, progression
 
 
-def isprime(digit: int) -> bool:
+def is_prime(digit: int) -> str:
     """used to calculate a prime digit"""
     if digit < 2:
-        return False
+        return 'no'
     for d in range(2, int(math.sqrt(digit)) + 1):
         if digit % d == 0:
-            return False
-    return True
-
-
-def computer_wrong_answer_yes(user_answer, user_name) -> str:
-    """return massage = wrong answer"""
-    message = (f"'{user_answer}' is wrong answer ;(."
-               f"Correct answer was 'no'.\nLet's try again, {user_name}!")
-    return message
-
-
-def computer_wrong_answer_no(user_answer: str, user_name: str) -> str:
-    """return massage = wrong answer"""
-    message = (f"'{user_answer}' is wrong answer ;(."
-               f"Correct answer was 'yes'.\nLet's try again, {user_name}!")
-    return message
-
-
-def is_correct_answer(iseven_num: bool, user_input_a: str) -> bool:
-    """Check if the user's response matches the expected response."""
-    if iseven_num and user_input_a == 'yes' or not\
-            iseven_num and user_input_a == 'no':
-        return True
-
-
-def wrong_answer(num: bool, user_input_a: str, usr_name: str) -> str or bool:
-    """Forms an answer about the wrong choice."""
-    if num and (user_input_a == 'yes'):
-        return computer_wrong_answer_yes(user_input_a, usr_name)
-    elif not num and (user_input_a == 'no'):
-        return computer_wrong_answer_no(user_input_a, usr_name)
-    elif not num and (user_input_a == 'yes'):
-        return computer_wrong_answer_yes(user_input_a, usr_name)
-    elif num and (user_input_a == 'no'):
-        return computer_wrong_answer_no(user_input_a, usr_name)
-    elif user_input_a not in ('yes', 'no'):
-        return 'fatal error, incorrect input. Program is shutdown immediately!'
-
-
-# def input_valid(value: str) -> str:
-#     if value not in('yes', 'no'):
-#         print("Incorrect input, please input only 'yes' or 'no'!")
-#         user_inp = user_input()
-#         return user_inp
-#     return value
+            return 'no'
+    return 'yes'
