@@ -19,7 +19,6 @@ def is_prime(digit: int) -> str:
     return 'yes'
 
 
-
 def make_question_and_correct_answer():
     """Make game question and answer."""
     number = randint(MIN_NUMBER, MAX_NUMBER)
