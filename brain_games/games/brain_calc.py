@@ -4,14 +4,14 @@ from random import choice, randint
 from operator import add, sub, mul
 
 DESCRIPTION = 'What is the result of the expression?'
+MIN_NUMBER = 1
+MAX_NUMBER = 12
 
 
 def make_question_and_correct_answer():
     """Make game question and answer."""
-    min_number = 1
-    max_number = 12
-    operand_first = randint(min_number, max_number)
-    operand_second = randint(min_number, max_number)
+    operand_first = randint(MIN_NUMBER, MAX_NUMBER)
+    operand_second = randint(MIN_NUMBER, MAX_NUMBER)
     operation, operator = choice([
         (add, '+'),
         (sub, '-'),

@@ -3,12 +3,12 @@
 
 
 from brain_games.engine import run_game
-from brain_games.games import brain_prime_logic
+from brain_games.games import brain_prime
 
 
 def main():
     """Start the "Brain-Prime Game"."""
-    run_game(brain_prime_logic)
+    run_game(brain_prime)
 
 
 if __name__ == '__main__':
