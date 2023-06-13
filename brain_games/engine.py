@@ -5,18 +5,11 @@ import prompt
 MAX_ROUND = 3
 
 
-def greeting() -> str:
-    '''function print Hello, { inputing name } and return user_name
-    '''
+def run_game(game_name):
+    """Run Brain Games."""
     print("Welcome to the Brain Games!")
     user_name = prompt.string('May I have your name? ')
     print(f'Hello, {user_name}')
-    return user_name
-
-
-def run_game(game_name):
-    """Run Brain Games."""
-    user_name = greeting()
     print(game_name.DESCRIPTION)
 
     for round_number in range(MAX_ROUND):
@@ -30,5 +23,5 @@ def run_game(game_name):
                   f"Let\'s try again, {user_name}!")
             return
         print("Correct!")
-    else:
-        print(f"Congratulations, {user_name}!")
+
+    print(f"Congratulations, {user_name}!")
