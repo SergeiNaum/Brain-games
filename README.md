@@ -7,7 +7,7 @@
 
 ## Installation and first start
 
-```clone game from repository``` - git clone git@github.com:SergeiNaum/python-project-49.git
+```clone game from repository``` - https://github.com/SergeiNaum/Brain-games.git
 
 ```installing dependencies``` - make install
 
