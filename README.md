@@ -3,7 +3,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/c62b536dfd604931a711/maintainability)](https://codeclimate.com/github/SergeiNaum/python-project-49/maintainability)
 
 
-# python-project-49
+# Brain-games
 
 ## Installation and first start
 
